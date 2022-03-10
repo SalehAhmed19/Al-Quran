@@ -5,7 +5,7 @@ fetch(url)
 const url2 = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
 fetch(url2)
     .then(res => res.json())
-    .then(data => console.log(data.data.surahs));
+    .then(data => showAyah(data.data.surahs));
 
 const displaySurah = data => {
     const suraList = document.getElementById('surah-list');
@@ -33,11 +33,26 @@ const displaySurah = data => {
             <td>${sura.englishNameTranslation}</td>
             <td>${sura.revelationType}</td>
         </tr>
-        `
+        `;
         suraList.appendChild(tbody);
     }
 }
 
+
+// const showAyah = ayahs => {
+//     const ayah = document.getElementById('ayah');
+//     for (ayah of ayahs) {
+//         const tbody = document.createElement('tbody');
+//         for (ayah in ayahs[0]) {
+//             tbody.innerHTML = `
+//             <tr>
+//                 <td class="col-2">${ayah.number}</td>
+//                 <td class="col-10">${ayah.text}</td>
+//             </tr>
+//           `
+//         }
+//     }
+// }
 
 
 
@@ -48,4 +63,11 @@ const displaySurah = data => {
 
             </table>
         </div>
+*/
+
+/* 
+<tr>
+                <td class="col-2">${sura.englishName}</td>
+                <td class="col-10">${sura.name}</td>
+            </tr>
 */
