@@ -1,3 +1,7 @@
+const toggleSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+toggleSpinner('block');
 const url = 'http://api.alquran.cloud/v1/quran/en.asad';
 fetch(url)
     .then(res => res.json())
@@ -6,6 +10,7 @@ const url2 = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
 fetch(url2)
     .then(res => res.json())
     .then(data => showAyah(data.data.surahs));
+
 
 const displaySurah = data => {
     const suraList = document.getElementById('surah-list');
@@ -34,6 +39,7 @@ const displaySurah = data => {
             <td>${sura.revelationType}</td>
         </tr>
         `;
+        toggleSpinner('none')
         suraList.appendChild(tbody);
     }
 }
