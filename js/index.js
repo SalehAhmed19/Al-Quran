@@ -2,11 +2,11 @@ const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
 toggleSpinner('block');
-const url = 'http://api.alquran.cloud/v1/quran/en.asad';
+const url = 'https://api.alquran.cloud/v1/quran/en.asad';
 fetch(url)
     .then(res => res.json())
     .then(data => displaySurah(data.data.surahs));
-const url2 = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
+const url2 = 'https://api.alquran.cloud/v1/quran/quran-uthmani';
 fetch(url2)
     .then(res => res.json())
     .then(data => showAyah(data.data.surahs));
